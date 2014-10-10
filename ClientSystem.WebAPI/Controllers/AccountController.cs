@@ -16,8 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using ClientSystem.WebAPI.Models;
 using ClientSystem.WebAPI.Providers;
 using ClientSystem.WebAPI.Results;
-using ClientSystem.Models;
-using ClientSystem.Data;
+using Microsoft.Owin;
 
 namespace ClientSystem.WebAPI.Controllers
 {
@@ -50,6 +49,8 @@ namespace ClientSystem.WebAPI.Controllers
                 _userManager = value;
             }
         }
+
+        
 
         public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
 
@@ -341,43 +342,6 @@ namespace ClientSystem.WebAPI.Controllers
 
             return Ok();
         }
-
-        //// POST api/Account/RegisterAdmin
-        //[AllowAnonymous]
-        //[Route("RegisterAdmin")]
-        //public async Task<IHttpActionResult> RegisterAdmin(RegisterBindingModel model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-
-        //    IdentityResult result;
-        //    using (var context = new ApplicationDbContext())
-        //    {
-        //        var roleStore = new RoleStore<IdentityRole>(context);
-        //        var roleManager = new RoleManager<IdentityRole>(roleStore);
-
-        //        await roleManager.CreateAsync(new IdentityRole() { Name = "Admin" });
-
-        //        var userStore = new UserStore<ApplicationUser>(context);
-        //        var userManager = new UserManager<ApplicationUser>(userStore);
-
-        //        var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
-
-        //        result = await UserManager.CreateAsync(user, model.Password);
-        //        await userManager.AddToRoleAsync(user.Id, "Admin");
-
-        //    }
-
-        //    if (!result.Succeeded)
-        //    {
-        //        return GetErrorResult(result);
-        //    }
-
-        //    return Ok();
-        //}
 
         // POST api/Account/RegisterExternal
         [OverrideAuthentication]

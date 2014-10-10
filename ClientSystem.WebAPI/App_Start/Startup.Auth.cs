@@ -10,7 +10,6 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using ClientSystem.WebAPI.Providers;
 using ClientSystem.WebAPI.Models;
-using ClientSystem.Data;
 
 namespace ClientSystem.WebAPI
 {

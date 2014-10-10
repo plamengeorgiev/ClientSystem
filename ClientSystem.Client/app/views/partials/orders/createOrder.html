@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="well">
+        <form name="signUpForm" class="form-horizontal">
+            <fieldset>
+                <legend>Нова поръчка</legend>
+                <div class="form-group">
+                    <label for="DiscName" class="col-md-2 control-label">Име на диск</label>
+                    <div class="col-md-10">
+                        <input id="DiscName" type="text" placeholder="Име на диск" ng-model="order.DiscName" required="required" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="CompanyName" class="col-md-2 control-label">Име на фирма</label>
+                    <div class="col-md-10">
+                        <input id="CompanyName" type="text" placeholder="Име на фирма" ng-model="order.CompanyName" required="required" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ContactName" class="col-md-2 control-label">Име - контакт</label>
+                    <div class="col-md-10">
+                        <input id="ContactName" type="text" placeholder="Име - контакт" ng-model="order.ContactName" required="required" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="StationaryPhone" class="col-md-2 control-label">Телефон - стационарен</label>
+                    <div class="col-md-10">
+                        <input id="StationaryPhone" type="number" placeholder="Телефон - стационарен" ng-model="order.StationaryPhone" required="required" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="MobilePhone" class="col-md-2 control-label">Телефон - мобилен</label>
+                    <div class="col-md-10">
+                        <input id="MobilePhone" type="number" placeholder="Телефон - мобилен" ng-model="order.MobilePhone" required="required" class="form-control"/>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="pull-right">
+                    <button ng-click="signup(user)" ng-disabled="signUpForm.$invalid" class="btn btn-primary">
+                        Create
+                    </button>
+                    <a href="#/" class="btn btn-primary">Cancel</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

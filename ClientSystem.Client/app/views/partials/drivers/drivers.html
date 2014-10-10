@@ -1,0 +1,28 @@
+<div class="container clearfix" ng-controller="DriversController">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 big-text">
+                <strong>Latest Drivers</strong>
+            </div>
+        </div>
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-md-3">
+                    <span>Name</span>
+                </div>
+                <div class="col-md-2">
+                    <span>Upcomming Trips</span>
+                </div>
+                <div class="col-md-2">
+                    <span>Total Trips</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-repeat="driver in drivers">
+            <div driver-home-directive driver="driver"></div>
+        </div>
+    </div>
+
+</div>

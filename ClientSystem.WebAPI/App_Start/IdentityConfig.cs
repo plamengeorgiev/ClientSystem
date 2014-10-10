@@ -4,8 +4,6 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using ClientSystem.WebAPI.Models;
-using ClientSystem.Models;
-using ClientSystem.Data;
 
 namespace ClientSystem.WebAPI
 {

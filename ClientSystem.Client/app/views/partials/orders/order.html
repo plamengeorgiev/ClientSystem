@@ -1,0 +1,28 @@
+<div class="container clearfix" ng-controller="DriversController">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 big-text">
+                <strong>Latest Drivers</strong>
+            </div>
+        </div>
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-md-3">
+                    <span>Фирма</span>
+                </div>
+                <div class="col-md-2">
+                    <span>Име - контакт</span>
+                </div>
+                <div class="col-md-2">
+                    <span>Телефон</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-repeat="order in orders">
+        <div driver-home-directive driver="order"></div>
+    </div>
+</div>
+
+</div>

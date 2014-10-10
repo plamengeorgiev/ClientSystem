@@ -1,0 +1,59 @@
+<div class="container clearfix" ng-controller="TripsController">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 big-text">
+                <strong>Latest Available Trips</strong>
+                <a href="#/trips/create" class="btn btn-primary pull-right">Create</a>
+            </div>
+        </div>
+        <div class="row" ng-hide="identity.isAuthenticated()">
+            <div class="col-md-3">
+                <span>Sort</span>
+                <select ng-model="criteria">
+                    <option>Date</option>
+                    <option>Driver</option>
+                    <option>From</option>
+                    <option>To</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <span>Order</span>
+                <select ng-model="orderSelect">
+                    <option>Ascending</option>
+                    <option>Descending</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <span>From</span>
+                <select ng-model="fromTownSelected">
+                    <option ng-repeat="town in fromTowns">{{town}}</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <span>To</span>
+                <select ng-model="toTownSelected">
+                    <option ng-repeat="town in toTowns">{{town}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-md-3">
+                    <span>Driver</span>
+                </div>
+                <div class="col-md-2">
+                    <span>From</span>
+                </div>
+                <div class="col-md-2">
+                    <span>To</span>
+                </div>
+                <div class="col-md-2">
+                    <span>Departure Date</span>
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-repeat="trip in trips | filter : fromTownSelected | filter : toTownSelected |orderBy : sortFilter(criteria) : orderSelect">
+            <div trip-home-directive trip="trip"></div>
+        </div>
+    </div>
+</div>

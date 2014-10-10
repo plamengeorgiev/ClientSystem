@@ -1,0 +1,50 @@
+<div class="container clearfix" ng-controller="HomeController">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 big-text">
+                <strong>Latest Available Trips</strong>
+            </div>
+        </div>
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-md-3">
+                    <span>Driver</span>
+                </div>
+                <div class="col-md-2">
+                    <span>From</span>
+                </div>
+                <div class="col-md-2">
+                    <span>To</span>
+                </div>
+                <div class="col-md-2">
+                    <span>Departure Date</span>
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-repeat="trip in trips">
+            <div trip-home-directive trip="trip" />
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-6 big-text">
+                <strong>Latest Drivers</strong>
+            </div>
+        </div>
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-md-3">
+                    <span>Name</span>
+                </div>
+                <div class="col-md-2">
+                    <span>Upcomming Trips</span>
+                </div>
+                <div class="col-md-2">
+                    <span>Total Trips</span>
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-repeat="driver in drivers">
+            <div driver-home-directive driver="driver" />
+        </div>
+    </div>
+</div>
